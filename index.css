@@ -1,3 +1,98 @@
+/* #region Imports */
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+/* #endregion */
+/* #region Main CSS-Style Core */
+:root{
+    --font-color: rgb(187, 63, 218);
+    --navtext-color: rgb(236, 184, 41);
+    --background-color: rgb(10, 10, 10);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: "Electrolize", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+}
+/* #endregion */
+/* #region Navigation */
+a{
+    text-decoration: none;
+    color: var(--navtext-color);
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    height: 10vh;
+    padding: 0 2rem;
+}
+.icon{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+/* Mobile First */
+.menu {
+    display: none;
+}
+.menu.active{
+    display: flex;
+}
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 2rem;
+    height: 1.5rem;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.hamburger .material-symbols-outlined {
+    font-size: 1.75rem;
+    color: var(--navtext-color);
+}
+/* #endregion */
+body{
+    background-color: var(--background-color);
+    color: var(--font-color);
+    width: 100%;
+    height: 100%;
+}
 section{
     height: 100vh;
 }
+/* #region BREAKPOINTS MEDIA QUERIES */
+@media (min-width: 768px) {
+    .menu,
+    .menu.active {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        align-items: center;
+        width: auto;
+        padding: 0;
+        background: transparent;
+    }
+
+    .hamburger {
+        display: none;
+    }
+}
+/* #endregion */
