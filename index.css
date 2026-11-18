@@ -6,6 +6,7 @@
     --font-color: rgb(187, 63, 218);
     --navtext-color: rgb(236, 184, 41);
     --background-color: rgb(10, 10, 10);
+    --backgroundlight-color: rgb(17, 17, 17);
 }
 * {
     margin: 0;
@@ -17,6 +18,7 @@ html{
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
+    scroll-behavior: smooth;
 }
 /* #endregion */
 /* #region Navigation */
@@ -25,9 +27,12 @@ a{
     color: var(--navtext-color);
 }
 header{
+    position: sticky;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--background-color);
 }
 .navbar{
     display: flex;
@@ -48,6 +53,20 @@ header{
 /* Mobile First */
 .menu {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+    height: calc(100dvh - 10vh);
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    background-color: var(--backgroundlight-color);
+    z-index: 10;
 }
 .menu.active{
     display: flex;
@@ -77,6 +96,7 @@ body{
 }
 section{
     height: 100vh;
+    scroll-margin-top: 10vh;
 }
 /* #region BREAKPOINTS MEDIA QUERIES */
 @media (min-width: 768px) {
