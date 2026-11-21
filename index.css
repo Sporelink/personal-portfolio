@@ -33,6 +33,7 @@ header{
     align-items: center;
     justify-content: center;
     background-color: var(--background-color);
+    border-bottom: .8px solid rgba(255, 255, 255, 0.145);
 }
 .navbar{
     display: flex;
